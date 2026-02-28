@@ -1,0 +1,1040 @@
+[
+  {
+    "slug": "plumber",
+    "name": "Plumber",
+    "category": "Home Services",
+    "description": "Professional plumbing services including repairs, installations, drain cleaning, and emergency plumbing."
+  },
+  {
+    "slug": "electrician",
+    "name": "Electrician",
+    "category": "Home Services",
+    "description": "Licensed electricians for wiring, panel upgrades, lighting installation, and electrical repairs."
+  },
+  {
+    "slug": "hvac",
+    "name": "HVAC",
+    "category": "Home Services",
+    "description": "Heating, ventilation, and air conditioning installation, repair, and maintenance services."
+  },
+  {
+    "slug": "roofer",
+    "name": "Roofer",
+    "category": "Home Services",
+    "description": "Roof repair, replacement, inspection, and maintenance for residential and commercial properties."
+  },
+  {
+    "slug": "painter",
+    "name": "Painter",
+    "category": "Home Services",
+    "description": "Interior and exterior painting services for homes and businesses."
+  },
+  {
+    "slug": "handyman",
+    "name": "Handyman",
+    "category": "Home Services",
+    "description": "General home repair and maintenance services for small to medium projects."
+  },
+  {
+    "slug": "locksmith",
+    "name": "Locksmith",
+    "category": "Home Services",
+    "description": "Lock installation, repair, rekeying, and emergency lockout services."
+  },
+  {
+    "slug": "pest-control",
+    "name": "Pest Control",
+    "category": "Home Services",
+    "description": "Extermination and prevention services for roaches, bed bugs, rodents, and other pests."
+  },
+  {
+    "slug": "carpet-cleaner",
+    "name": "Carpet Cleaner",
+    "category": "Home Services",
+    "description": "Professional carpet and upholstery cleaning, stain removal, and deep cleaning services."
+  },
+  {
+    "slug": "house-cleaner",
+    "name": "House Cleaner",
+    "category": "Home Services",
+    "description": "Residential cleaning services including deep cleaning, move-in/move-out, and recurring cleaning."
+  },
+  {
+    "slug": "window-cleaner",
+    "name": "Window Cleaner",
+    "category": "Home Services",
+    "description": "Professional window washing for residential and commercial buildings."
+  },
+  {
+    "slug": "landscaper",
+    "name": "Landscaper",
+    "category": "Home Services",
+    "description": "Lawn care, garden design, tree trimming, and landscape maintenance services."
+  },
+  {
+    "slug": "general-contractor",
+    "name": "General Contractor",
+    "category": "Home Services",
+    "description": "Full-service construction management for renovations, remodeling, and new builds."
+  },
+  {
+    "slug": "kitchen-remodeler",
+    "name": "Kitchen Remodeler",
+    "category": "Home Services",
+    "description": "Kitchen renovation and remodeling including cabinets, countertops, and layout redesign."
+  },
+  {
+    "slug": "bathroom-remodeler",
+    "name": "Bathroom Remodeler",
+    "category": "Home Services",
+    "description": "Bathroom renovation services including tile work, fixture installation, and full remodels."
+  },
+  {
+    "slug": "flooring-installer",
+    "name": "Flooring Installer",
+    "category": "Home Services",
+    "description": "Hardwood, tile, laminate, and vinyl flooring installation and refinishing."
+  },
+  {
+    "slug": "garage-door-repair",
+    "name": "Garage Door Repair",
+    "category": "Home Services",
+    "description": "Garage door installation, repair, opener replacement, and maintenance."
+  },
+  {
+    "slug": "fence-installer",
+    "name": "Fence Installer",
+    "category": "Home Services",
+    "description": "Wood, vinyl, chain link, and iron fence installation and repair."
+  },
+  {
+    "slug": "masonry",
+    "name": "Mason",
+    "category": "Home Services",
+    "description": "Brick, stone, and concrete work including patios, retaining walls, and foundations."
+  },
+  {
+    "slug": "drywall",
+    "name": "Drywall Contractor",
+    "category": "Home Services",
+    "description": "Drywall installation, repair, finishing, and texturing services."
+  },
+  {
+    "slug": "insulation",
+    "name": "Insulation Contractor",
+    "category": "Home Services",
+    "description": "Home insulation installation and upgrade services for energy efficiency."
+  },
+  {
+    "slug": "waterproofing",
+    "name": "Waterproofing",
+    "category": "Home Services",
+    "description": "Basement waterproofing, foundation sealing, and moisture control services."
+  },
+  {
+    "slug": "mold-removal",
+    "name": "Mold Removal",
+    "category": "Home Services",
+    "description": "Professional mold inspection, testing, remediation, and prevention services."
+  },
+  {
+    "slug": "chimney-sweep",
+    "name": "Chimney Sweep",
+    "category": "Home Services",
+    "description": "Chimney cleaning, inspection, repair, and maintenance services."
+  },
+  {
+    "slug": "gutter-cleaning",
+    "name": "Gutter Cleaning",
+    "category": "Home Services",
+    "description": "Gutter cleaning, repair, and installation services."
+  },
+  {
+    "slug": "pressure-washing",
+    "name": "Pressure Washing",
+    "category": "Home Services",
+    "description": "Power washing for driveways, siding, decks, patios, and commercial properties."
+  },
+  {
+    "slug": "appliance-repair",
+    "name": "Appliance Repair",
+    "category": "Home Services",
+    "description": "Repair services for refrigerators, washers, dryers, dishwashers, and other appliances."
+  },
+  {
+    "slug": "junk-removal",
+    "name": "Junk Removal",
+    "category": "Home Services",
+    "description": "Residential and commercial junk hauling, cleanout, and disposal services."
+  },
+  {
+    "slug": "moving-company",
+    "name": "Moving Company",
+    "category": "Home Services",
+    "description": "Local and long-distance moving, packing, and storage services."
+  },
+  {
+    "slug": "solar-installer",
+    "name": "Solar Installer",
+    "category": "Home Services",
+    "description": "Solar panel installation, design, and maintenance for homes and businesses."
+  },
+  {
+    "slug": "pool-service",
+    "name": "Pool Service",
+    "category": "Home Services",
+    "description": "Swimming pool cleaning, maintenance, repair, and installation."
+  },
+  {
+    "slug": "tree-service",
+    "name": "Tree Service",
+    "category": "Home Services",
+    "description": "Tree removal, trimming, pruning, stump grinding, and emergency storm damage cleanup."
+  },
+  {
+    "slug": "dentist",
+    "name": "Dentist",
+    "category": "Health & Medical",
+    "description": "General and cosmetic dentistry including cleanings, fillings, crowns, and implants."
+  },
+  {
+    "slug": "orthodontist",
+    "name": "Orthodontist",
+    "category": "Health & Medical",
+    "description": "Braces, Invisalign, and orthodontic treatment for teeth alignment."
+  },
+  {
+    "slug": "chiropractor",
+    "name": "Chiropractor",
+    "category": "Health & Medical",
+    "description": "Chiropractic adjustments, spinal care, and musculoskeletal treatment."
+  },
+  {
+    "slug": "dermatologist",
+    "name": "Dermatologist",
+    "category": "Health & Medical",
+    "description": "Skin care, acne treatment, mole removal, and cosmetic dermatology."
+  },
+  {
+    "slug": "physical-therapist",
+    "name": "Physical Therapist",
+    "category": "Health & Medical",
+    "description": "Rehabilitation, injury recovery, pain management, and mobility improvement."
+  },
+  {
+    "slug": "psychologist",
+    "name": "Psychologist",
+    "category": "Health & Medical",
+    "description": "Mental health therapy, counseling, and psychological evaluation services."
+  },
+  {
+    "slug": "psychiatrist",
+    "name": "Psychiatrist",
+    "category": "Health & Medical",
+    "description": "Psychiatric evaluation, medication management, and mental health treatment."
+  },
+  {
+    "slug": "therapist",
+    "name": "Therapist",
+    "category": "Health & Medical",
+    "description": "Individual, couples, and family therapy and counseling services."
+  },
+  {
+    "slug": "optometrist",
+    "name": "Optometrist",
+    "category": "Health & Medical",
+    "description": "Eye exams, vision testing, glasses, and contact lens fitting."
+  },
+  {
+    "slug": "pediatrician",
+    "name": "Pediatrician",
+    "category": "Health & Medical",
+    "description": "Child healthcare, well-child visits, vaccinations, and pediatric care."
+  },
+  {
+    "slug": "urgent-care",
+    "name": "Urgent Care",
+    "category": "Health & Medical",
+    "description": "Walk-in medical clinics for non-emergency illnesses and injuries."
+  },
+  {
+    "slug": "acupuncturist",
+    "name": "Acupuncturist",
+    "category": "Health & Medical",
+    "description": "Traditional acupuncture therapy for pain relief, stress, and wellness."
+  },
+  {
+    "slug": "massage-therapist",
+    "name": "Massage Therapist",
+    "category": "Health & Medical",
+    "description": "Therapeutic massage including deep tissue, sports, Swedish, and prenatal."
+  },
+  {
+    "slug": "veterinarian",
+    "name": "Veterinarian",
+    "category": "Health & Medical",
+    "description": "Pet healthcare, vaccinations, surgery, dental care, and emergency vet services."
+  },
+  {
+    "slug": "personal-injury-lawyer",
+    "name": "Personal Injury Lawyer",
+    "category": "Legal",
+    "description": "Legal representation for accidents, slip and falls, medical malpractice, and injury claims."
+  },
+  {
+    "slug": "divorce-lawyer",
+    "name": "Divorce Lawyer",
+    "category": "Legal",
+    "description": "Family law attorneys specializing in divorce, custody, and separation."
+  },
+  {
+    "slug": "criminal-defense-lawyer",
+    "name": "Criminal Defense Lawyer",
+    "category": "Legal",
+    "description": "Legal defense for criminal charges including DUI, assault, and drug offenses."
+  },
+  {
+    "slug": "real-estate-lawyer",
+    "name": "Real Estate Lawyer",
+    "category": "Legal",
+    "description": "Legal services for property transactions, closings, disputes, and zoning."
+  },
+  {
+    "slug": "immigration-lawyer",
+    "name": "Immigration Lawyer",
+    "category": "Legal",
+    "description": "Visa applications, green cards, citizenship, deportation defense, and asylum."
+  },
+  {
+    "slug": "bankruptcy-lawyer",
+    "name": "Bankruptcy Lawyer",
+    "category": "Legal",
+    "description": "Chapter 7 and Chapter 13 bankruptcy filing, debt relief, and financial restructuring."
+  },
+  {
+    "slug": "estate-planning-lawyer",
+    "name": "Estate Planning Lawyer",
+    "category": "Legal",
+    "description": "Wills, trusts, estate planning, probate, and asset protection services."
+  },
+  {
+    "slug": "employment-lawyer",
+    "name": "Employment Lawyer",
+    "category": "Legal",
+    "description": "Workplace discrimination, wrongful termination, wage disputes, and harassment cases."
+  },
+  {
+    "slug": "tax-lawyer",
+    "name": "Tax Lawyer",
+    "category": "Legal",
+    "description": "Tax dispute resolution, IRS audits, tax planning, and compliance."
+  },
+  {
+    "slug": "accountant",
+    "name": "Accountant",
+    "category": "Financial",
+    "description": "Tax preparation, bookkeeping, financial planning, and business accounting."
+  },
+  {
+    "slug": "financial-advisor",
+    "name": "Financial Advisor",
+    "category": "Financial",
+    "description": "Investment management, retirement planning, wealth management, and financial consulting."
+  },
+  {
+    "slug": "insurance-agent",
+    "name": "Insurance Agent",
+    "category": "Financial",
+    "description": "Home, auto, life, health, and business insurance quotes and policies."
+  },
+  {
+    "slug": "mortgage-broker",
+    "name": "Mortgage Broker",
+    "category": "Financial",
+    "description": "Home loan origination, refinancing, and mortgage rate comparison services."
+  },
+  {
+    "slug": "auto-mechanic",
+    "name": "Auto Mechanic",
+    "category": "Automotive",
+    "description": "Car repair, maintenance, diagnostics, oil changes, and brake services."
+  },
+  {
+    "slug": "auto-body-shop",
+    "name": "Auto Body Shop",
+    "category": "Automotive",
+    "description": "Collision repair, dent removal, paint jobs, and auto body restoration."
+  },
+  {
+    "slug": "towing-service",
+    "name": "Towing Service",
+    "category": "Automotive",
+    "description": "Emergency towing, roadside assistance, jump starts, and flat tire help."
+  },
+  {
+    "slug": "car-detailing",
+    "name": "Car Detailing",
+    "category": "Automotive",
+    "description": "Interior and exterior car detailing, waxing, ceramic coating, and paint correction."
+  },
+  {
+    "slug": "auto-glass-repair",
+    "name": "Auto Glass Repair",
+    "category": "Automotive",
+    "description": "Windshield repair and replacement, side window, and rear glass services."
+  },
+  {
+    "slug": "hair-salon",
+    "name": "Hair Salon",
+    "category": "Beauty & Personal Care",
+    "description": "Haircuts, coloring, styling, blowouts, and hair treatments."
+  },
+  {
+    "slug": "barber-shop",
+    "name": "Barber Shop",
+    "category": "Beauty & Personal Care",
+    "description": "Men's haircuts, fades, beard trims, and traditional barbering."
+  },
+  {
+    "slug": "nail-salon",
+    "name": "Nail Salon",
+    "category": "Beauty & Personal Care",
+    "description": "Manicures, pedicures, gel nails, acrylic nails, and nail art."
+  },
+  {
+    "slug": "spa",
+    "name": "Spa",
+    "category": "Beauty & Personal Care",
+    "description": "Day spa services including facials, body treatments, and relaxation packages."
+  },
+  {
+    "slug": "tattoo-shop",
+    "name": "Tattoo Shop",
+    "category": "Beauty & Personal Care",
+    "description": "Custom tattoos, cover-ups, piercings, and tattoo removal referrals."
+  },
+  {
+    "slug": "waxing",
+    "name": "Waxing Studio",
+    "category": "Beauty & Personal Care",
+    "description": "Full body waxing, Brazilian, eyebrow shaping, and hair removal services."
+  },
+  {
+    "slug": "eyelash-extensions",
+    "name": "Eyelash Extensions",
+    "category": "Beauty & Personal Care",
+    "description": "Lash extensions, lash lifts, tinting, and eyelash enhancement services."
+  },
+  {
+    "slug": "med-spa",
+    "name": "Med Spa",
+    "category": "Beauty & Personal Care",
+    "description": "Botox, fillers, laser treatments, chemical peels, and aesthetic medical services."
+  },
+  {
+    "slug": "personal-trainer",
+    "name": "Personal Trainer",
+    "category": "Fitness & Wellness",
+    "description": "One-on-one fitness training, workout plans, and nutrition guidance."
+  },
+  {
+    "slug": "yoga-studio",
+    "name": "Yoga Studio",
+    "category": "Fitness & Wellness",
+    "description": "Yoga classes, private sessions, hot yoga, and meditation."
+  },
+  {
+    "slug": "gym",
+    "name": "Gym",
+    "category": "Fitness & Wellness",
+    "description": "Fitness centers with equipment, group classes, and membership programs."
+  },
+  {
+    "slug": "martial-arts",
+    "name": "Martial Arts",
+    "category": "Fitness & Wellness",
+    "description": "Karate, jiu-jitsu, kickboxing, MMA, and self-defense classes."
+  },
+  {
+    "slug": "pilates",
+    "name": "Pilates Studio",
+    "category": "Fitness & Wellness",
+    "description": "Reformer and mat Pilates classes for strength, flexibility, and rehabilitation."
+  },
+  {
+    "slug": "restaurant",
+    "name": "Restaurant",
+    "category": "Food & Dining",
+    "description": "Dining establishments serving a variety of cuisines and dining experiences."
+  },
+  {
+    "slug": "caterer",
+    "name": "Caterer",
+    "category": "Food & Dining",
+    "description": "Event catering services for weddings, corporate events, and private parties."
+  },
+  {
+    "slug": "bakery",
+    "name": "Bakery",
+    "category": "Food & Dining",
+    "description": "Fresh bread, pastries, custom cakes, and baked goods."
+  },
+  {
+    "slug": "food-truck",
+    "name": "Food Truck",
+    "category": "Food & Dining",
+    "description": "Mobile food vendors for events, festivals, and street food."
+  },
+  {
+    "slug": "wedding-planner",
+    "name": "Wedding Planner",
+    "category": "Events",
+    "description": "Full-service wedding planning, coordination, and day-of management."
+  },
+  {
+    "slug": "event-planner",
+    "name": "Event Planner",
+    "category": "Events",
+    "description": "Corporate event, party, and special occasion planning and coordination."
+  },
+  {
+    "slug": "dj",
+    "name": "DJ",
+    "category": "Events",
+    "description": "Professional DJ services for weddings, parties, corporate events, and clubs."
+  },
+  {
+    "slug": "photographer",
+    "name": "Photographer",
+    "category": "Events",
+    "description": "Professional photography for weddings, portraits, events, and commercial shoots."
+  },
+  {
+    "slug": "videographer",
+    "name": "Videographer",
+    "category": "Events",
+    "description": "Video production for weddings, events, commercials, and corporate content."
+  },
+  {
+    "slug": "florist",
+    "name": "Florist",
+    "category": "Events",
+    "description": "Floral arrangements for weddings, events, funerals, and everyday delivery."
+  },
+  {
+    "slug": "party-rental",
+    "name": "Party Rental",
+    "category": "Events",
+    "description": "Tent, table, chair, and equipment rentals for events and parties."
+  },
+  {
+    "slug": "tutor",
+    "name": "Tutor",
+    "category": "Education",
+    "description": "Academic tutoring for K-12, test prep, college admissions, and subject-specific help."
+  },
+  {
+    "slug": "music-lessons",
+    "name": "Music Lessons",
+    "category": "Education",
+    "description": "Piano, guitar, voice, violin, and other instrument lessons for all ages."
+  },
+  {
+    "slug": "dance-studio",
+    "name": "Dance Studio",
+    "category": "Education",
+    "description": "Dance classes including ballet, hip-hop, salsa, contemporary, and ballroom."
+  },
+  {
+    "slug": "driving-school",
+    "name": "Driving School",
+    "category": "Education",
+    "description": "Driving lessons, road test preparation, and defensive driving courses."
+  },
+  {
+    "slug": "daycare",
+    "name": "Daycare",
+    "category": "Education",
+    "description": "Childcare centers and in-home daycare for infants, toddlers, and preschoolers."
+  },
+  {
+    "slug": "preschool",
+    "name": "Preschool",
+    "category": "Education",
+    "description": "Early childhood education programs for ages 2-5."
+  },
+  {
+    "slug": "web-designer",
+    "name": "Web Designer",
+    "category": "Business Services",
+    "description": "Website design, development, and redesign for businesses and individuals."
+  },
+  {
+    "slug": "seo-company",
+    "name": "SEO Company",
+    "category": "Business Services",
+    "description": "Search engine optimization services to improve Google rankings and organic traffic."
+  },
+  {
+    "slug": "marketing-agency",
+    "name": "Marketing Agency",
+    "category": "Business Services",
+    "description": "Digital marketing, social media management, PPC, and brand strategy."
+  },
+  {
+    "slug": "graphic-designer",
+    "name": "Graphic Designer",
+    "category": "Business Services",
+    "description": "Logo design, branding, print materials, and visual identity creation."
+  },
+  {
+    "slug": "it-support",
+    "name": "IT Support",
+    "category": "Business Services",
+    "description": "Computer repair, network setup, cybersecurity, and managed IT services."
+  },
+  {
+    "slug": "printing-service",
+    "name": "Printing Service",
+    "category": "Business Services",
+    "description": "Business cards, flyers, banners, signage, and custom print solutions."
+  },
+  {
+    "slug": "notary",
+    "name": "Notary",
+    "category": "Business Services",
+    "description": "Mobile notary and notarization services for legal documents."
+  },
+  {
+    "slug": "commercial-cleaner",
+    "name": "Commercial Cleaner",
+    "category": "Business Services",
+    "description": "Office cleaning, janitorial services, and commercial property maintenance."
+  },
+  {
+    "slug": "security-guard",
+    "name": "Security Guard",
+    "category": "Business Services",
+    "description": "Uniformed security officers, event security, and property patrol services."
+  },
+  {
+    "slug": "real-estate-agent",
+    "name": "Real Estate Agent",
+    "category": "Real Estate",
+    "description": "Buying, selling, and renting residential and commercial properties."
+  },
+  {
+    "slug": "property-manager",
+    "name": "Property Manager",
+    "category": "Real Estate",
+    "description": "Rental property management, tenant screening, and building maintenance."
+  },
+  {
+    "slug": "home-inspector",
+    "name": "Home Inspector",
+    "category": "Real Estate",
+    "description": "Pre-purchase home inspections, termite inspections, and property assessments."
+  },
+  {
+    "slug": "appraiser",
+    "name": "Appraiser",
+    "category": "Real Estate",
+    "description": "Property valuation for sales, refinancing, and estate purposes."
+  },
+  {
+    "slug": "interior-designer",
+    "name": "Interior Designer",
+    "category": "Real Estate",
+    "description": "Home and office interior design, space planning, and décor consulting."
+  },
+  {
+    "slug": "dog-walker",
+    "name": "Dog Walker",
+    "category": "Pet Services",
+    "description": "Daily dog walking, group walks, and pet exercise services."
+  },
+  {
+    "slug": "dog-groomer",
+    "name": "Dog Groomer",
+    "category": "Pet Services",
+    "description": "Pet grooming including bathing, haircuts, nail trimming, and styling."
+  },
+  {
+    "slug": "dog-trainer",
+    "name": "Dog Trainer",
+    "category": "Pet Services",
+    "description": "Obedience training, behavior modification, puppy training, and agility."
+  },
+  {
+    "slug": "pet-sitter",
+    "name": "Pet Sitter",
+    "category": "Pet Services",
+    "description": "In-home pet sitting, overnight stays, and pet boarding alternatives."
+  },
+  {
+    "slug": "dry-cleaner",
+    "name": "Dry Cleaner",
+    "category": "Lifestyle",
+    "description": "Dry cleaning, laundry service, alterations, and garment care."
+  },
+  {
+    "slug": "tailor",
+    "name": "Tailor",
+    "category": "Lifestyle",
+    "description": "Custom tailoring, alterations, suit fitting, and garment repair."
+  },
+  {
+    "slug": "laundromat",
+    "name": "Laundromat",
+    "category": "Lifestyle",
+    "description": "Self-service laundry, wash-and-fold, and pickup delivery laundry services."
+  },
+  {
+    "slug": "storage-facility",
+    "name": "Storage Facility",
+    "category": "Lifestyle",
+    "description": "Self-storage units, climate-controlled storage, and vehicle storage."
+  },
+  {
+    "slug": "courier",
+    "name": "Courier",
+    "category": "Lifestyle",
+    "description": "Same-day delivery, messenger services, and package courier services."
+  },
+  {
+    "slug": "snow-removal",
+    "name": "Snow Removal",
+    "category": "Seasonal",
+    "description": "Snow plowing, shoveling, ice management, and winter property maintenance."
+  },
+  {
+    "slug": "tax-preparer",
+    "name": "Tax Preparer",
+    "category": "Financial",
+    "description": "Individual and business tax return preparation and filing services."
+  },
+  {
+    "slug": "bookkeeper",
+    "name": "Bookkeeper",
+    "category": "Financial",
+    "description": "Business bookkeeping, payroll, accounts receivable/payable management."
+  },
+  {
+    "slug": "architect",
+    "name": "Architect",
+    "category": "Home Services",
+    "description": "Architectural design, blueprints, permits, and construction planning."
+  },
+  {
+    "slug": "surveyor",
+    "name": "Surveyor",
+    "category": "Home Services",
+    "description": "Land surveying, boundary surveys, and topographic mapping."
+  },
+  {
+    "slug": "siding-contractor",
+    "name": "Siding Contractor",
+    "category": "Home Services",
+    "description": "Vinyl, wood, fiber cement, and aluminum siding installation and repair."
+  },
+  {
+    "slug": "window-installer",
+    "name": "Window Installer",
+    "category": "Home Services",
+    "description": "Window replacement, new construction windows, and energy-efficient upgrades."
+  },
+  {
+    "slug": "door-installer",
+    "name": "Door Installer",
+    "category": "Home Services",
+    "description": "Interior and exterior door installation, replacement, and repair."
+  },
+  {
+    "slug": "deck-builder",
+    "name": "Deck Builder",
+    "category": "Home Services",
+    "description": "Custom deck design, construction, repair, and staining services."
+  },
+  {
+    "slug": "paving-contractor",
+    "name": "Paving Contractor",
+    "category": "Home Services",
+    "description": "Asphalt and concrete paving for driveways, parking lots, and walkways."
+  },
+  {
+    "slug": "septic-service",
+    "name": "Septic Service",
+    "category": "Home Services",
+    "description": "Septic tank pumping, cleaning, inspection, and repair services."
+  },
+  {
+    "slug": "well-drilling",
+    "name": "Well Drilling",
+    "category": "Home Services",
+    "description": "Water well drilling, pump installation, and well maintenance."
+  },
+  {
+    "slug": "home-stager",
+    "name": "Home Stager",
+    "category": "Real Estate",
+    "description": "Home staging for real estate sales to maximize property appeal."
+  },
+  {
+    "slug": "closet-organizer",
+    "name": "Closet Organizer",
+    "category": "Home Services",
+    "description": "Custom closet design, organization systems, and storage solutions."
+  },
+  {
+    "slug": "home-security",
+    "name": "Home Security",
+    "category": "Home Services",
+    "description": "Security system installation, cameras, alarms, and smart home integration."
+  },
+  {
+    "slug": "epoxy-flooring",
+    "name": "Epoxy Flooring",
+    "category": "Home Services",
+    "description": "Garage floor epoxy, commercial flooring coatings, and decorative epoxy."
+  },
+  {
+    "slug": "stucco-contractor",
+    "name": "Stucco Contractor",
+    "category": "Home Services",
+    "description": "Stucco installation, repair, and exterior finishing services."
+  },
+  {
+    "slug": "glass-repair",
+    "name": "Glass Repair",
+    "category": "Home Services",
+    "description": "Window glass, shower door, mirror, and storefront glass repair and replacement."
+  },
+  {
+    "slug": "welder",
+    "name": "Welder",
+    "category": "Home Services",
+    "description": "Metal fabrication, welding repair, railings, gates, and structural welding."
+  },
+  {
+    "slug": "concrete-contractor",
+    "name": "Concrete Contractor",
+    "category": "Home Services",
+    "description": "Concrete pouring, stamped concrete, foundations, and flatwork."
+  },
+  {
+    "slug": "demolition",
+    "name": "Demolition Contractor",
+    "category": "Home Services",
+    "description": "Interior and exterior demolition, selective demo, and site clearing."
+  },
+  {
+    "slug": "asbestos-removal",
+    "name": "Asbestos Removal",
+    "category": "Home Services",
+    "description": "Asbestos testing, abatement, removal, and safe disposal services."
+  },
+  {
+    "slug": "lead-paint-removal",
+    "name": "Lead Paint Removal",
+    "category": "Home Services",
+    "description": "Lead paint testing, abatement, and remediation services."
+  },
+  {
+    "slug": "fire-damage-restoration",
+    "name": "Fire Damage Restoration",
+    "category": "Home Services",
+    "description": "Fire and smoke damage cleanup, restoration, and reconstruction."
+  },
+  {
+    "slug": "water-damage-restoration",
+    "name": "Water Damage Restoration",
+    "category": "Home Services",
+    "description": "Water extraction, flood cleanup, drying, and property restoration."
+  },
+  {
+    "slug": "orthodontist",
+    "name": "Orthodontist",
+    "category": "Health & Medical",
+    "description": "Braces, clear aligners, and orthodontic treatment for all ages."
+  },
+  {
+    "slug": "oral-surgeon",
+    "name": "Oral Surgeon",
+    "category": "Health & Medical",
+    "description": "Wisdom teeth extraction, dental implants, and corrective jaw surgery."
+  },
+  {
+    "slug": "periodontist",
+    "name": "Periodontist",
+    "category": "Health & Medical",
+    "description": "Gum disease treatment, dental implants, and periodontal surgery."
+  },
+  {
+    "slug": "endodontist",
+    "name": "Endodontist",
+    "category": "Health & Medical",
+    "description": "Root canal therapy and endodontic treatment for tooth pain."
+  },
+  {
+    "slug": "podiatrist",
+    "name": "Podiatrist",
+    "category": "Health & Medical",
+    "description": "Foot and ankle care, bunion treatment, orthotics, and foot surgery."
+  },
+  {
+    "slug": "allergist",
+    "name": "Allergist",
+    "category": "Health & Medical",
+    "description": "Allergy testing, immunotherapy, asthma management, and allergy treatment."
+  },
+  {
+    "slug": "cardiologist",
+    "name": "Cardiologist",
+    "category": "Health & Medical",
+    "description": "Heart health, cardiovascular testing, treatment, and prevention."
+  },
+  {
+    "slug": "orthopedic-doctor",
+    "name": "Orthopedic Doctor",
+    "category": "Health & Medical",
+    "description": "Bone, joint, and muscle care including sports medicine and surgery."
+  },
+  {
+    "slug": "neurologist",
+    "name": "Neurologist",
+    "category": "Health & Medical",
+    "description": "Brain, spine, and nervous system disorders diagnosis and treatment."
+  },
+  {
+    "slug": "ent-doctor",
+    "name": "ENT Doctor",
+    "category": "Health & Medical",
+    "description": "Ear, nose, and throat care including sinus treatment and hearing."
+  },
+  {
+    "slug": "gastroenterologist",
+    "name": "Gastroenterologist",
+    "category": "Health & Medical",
+    "description": "Digestive system care, colonoscopy, and GI disorder treatment."
+  },
+  {
+    "slug": "urologist",
+    "name": "Urologist",
+    "category": "Health & Medical",
+    "description": "Urinary tract, kidney, and male reproductive health services."
+  },
+  {
+    "slug": "obgyn",
+    "name": "OB/GYN",
+    "category": "Health & Medical",
+    "description": "Women's health, prenatal care, gynecology, and reproductive services."
+  },
+  {
+    "slug": "plastic-surgeon",
+    "name": "Plastic Surgeon",
+    "category": "Health & Medical",
+    "description": "Cosmetic and reconstructive surgery, rhinoplasty, breast augmentation."
+  },
+  {
+    "slug": "ophthalmologist",
+    "name": "Ophthalmologist",
+    "category": "Health & Medical",
+    "description": "Eye surgery, LASIK, cataract removal, and advanced eye care."
+  },
+  {
+    "slug": "speech-therapist",
+    "name": "Speech Therapist",
+    "category": "Health & Medical",
+    "description": "Speech and language therapy for children and adults."
+  },
+  {
+    "slug": "occupational-therapist",
+    "name": "Occupational Therapist",
+    "category": "Health & Medical",
+    "description": "Rehabilitation and skill-building for daily living activities."
+  },
+  {
+    "slug": "home-health-aide",
+    "name": "Home Health Aide",
+    "category": "Health & Medical",
+    "description": "In-home healthcare, elder care, and personal care assistance."
+  },
+  {
+    "slug": "senior-care",
+    "name": "Senior Care",
+    "category": "Health & Medical",
+    "description": "Assisted living referrals, home care, and senior support services."
+  },
+  {
+    "slug": "addiction-counselor",
+    "name": "Addiction Counselor",
+    "category": "Health & Medical",
+    "description": "Substance abuse counseling, intervention, and recovery support."
+  },
+  {
+    "slug": "nutritionist",
+    "name": "Nutritionist",
+    "category": "Health & Medical",
+    "description": "Diet planning, weight management, and nutritional counseling."
+  },
+  {
+    "slug": "dui-lawyer",
+    "name": "DUI Lawyer",
+    "category": "Legal",
+    "description": "DUI/DWI defense, license suspension hearings, and drunk driving charges."
+  },
+  {
+    "slug": "business-lawyer",
+    "name": "Business Lawyer",
+    "category": "Legal",
+    "description": "Business formation, contracts, litigation, and corporate law."
+  },
+  {
+    "slug": "intellectual-property-lawyer",
+    "name": "Intellectual Property Lawyer",
+    "category": "Legal",
+    "description": "Trademark, patent, copyright, and trade secret protection."
+  },
+  {
+    "slug": "construction-lawyer",
+    "name": "Construction Lawyer",
+    "category": "Legal",
+    "description": "Construction disputes, liens, contracts, and building code violations."
+  },
+  {
+    "slug": "workers-comp-lawyer",
+    "name": "Workers Comp Lawyer",
+    "category": "Legal",
+    "description": "Workplace injury claims, disability benefits, and workers compensation."
+  },
+  {
+    "slug": "social-security-lawyer",
+    "name": "Social Security Lawyer",
+    "category": "Legal",
+    "description": "Social security disability claims, appeals, and benefits."
+  },
+  {
+    "slug": "traffic-ticket-lawyer",
+    "name": "Traffic Ticket Lawyer",
+    "category": "Legal",
+    "description": "Speeding tickets, red light cameras, and traffic violation defense."
+  },
+  {
+    "slug": "tenant-lawyer",
+    "name": "Tenant Lawyer",
+    "category": "Legal",
+    "description": "Tenant rights, eviction defense, lease disputes, and housing court."
+  },
+  {
+    "slug": "bail-bondsman",
+    "name": "Bail Bondsman",
+    "category": "Legal",
+    "description": "Bail bond services, arrest processing, and pretrial release assistance."
+  },
+  {
+    "slug": "process-server",
+    "name": "Process Server",
+    "category": "Legal",
+    "description": "Legal document delivery, court filing, and service of process."
+  }
+]
