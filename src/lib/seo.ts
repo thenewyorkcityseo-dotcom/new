@@ -5,42 +5,63 @@ const SITE_URL = "https://www.thenycseo.com";
 const PHONE = "212-202-9220";
 
 export function getMoneyPageMeta(service: Service, neighborhood: Neighborhood) {
-  const title = `${service.name} in ${neighborhood.name} | Top-Rated Local ${service.name} Services`;
-  const description = `Find the best ${service.name.toLowerCase()} in ${neighborhood.name}, ${neighborhood.region}. ${service.description} Get free quotes from top-rated local pros today.`;
+  const location = neighborhood.name === neighborhood.region
+    ? neighborhood.name
+    : `${neighborhood.name}, ${neighborhood.region}`;
+  const title = `SEO for ${service.name} Businesses in ${neighborhood.name} | Local SEO`;
+  const description = `Local SEO and AI search optimization for ${service.name.toLowerCase()} businesses in ${location}. Rank on Google Maps, organic search, and AI platforms. Get a free SEO audit today.`;
 
-  return { title, description };
+  return {
+    title,
+    description,
+    canonical: `${SITE_URL}/${service.slug}/${neighborhood.slug}`,
+  };
 }
 
 export function getServiceHubMeta(service: Service) {
-  const title = `${service.name} Services NYC | Best ${service.name} Near You`;
-  const description = `Find top-rated ${service.name.toLowerCase()} services across NYC, New Jersey, Long Island & Westchester. ${service.description} Compare local pros and get free quotes.`;
+  const title = `SEO for ${service.name}s NYC | Rank Your ${service.name} Business`;
+  const description = `SEO and AI search optimization for ${service.name.toLowerCase()} businesses in NYC. Local SEO, Google Maps, content marketing, and programmatic pages across 318 neighborhoods.`;
 
-  return { title, description };
+  return {
+    title,
+    description,
+    canonical: `${SITE_URL}/${service.slug}`,
+  };
 }
 
 export function getNeighborhoodHubMeta(neighborhood: Neighborhood) {
-  const title = `Local Services in ${neighborhood.name} | Find Top-Rated Pros`;
-  const description = `Browse all local service providers in ${neighborhood.name}, ${neighborhood.region}. Find plumbers, electricians, lawyers, dentists & more. Get free quotes from trusted local businesses.`;
+  const title = `SEO for Businesses in ${neighborhood.name} | ${neighborhood.region} Local SEO`;
+  const description = `Local SEO and AI search optimization for businesses in ${neighborhood.name}, ${neighborhood.region}. We build optimized pages for all 172 service types. Dominate Google Maps and AI search.`;
 
-  return { title, description };
+  return {
+    title,
+    description,
+    canonical: `${SITE_URL}/areas/${neighborhood.slug}`,
+  };
 }
 
 export function getLocalBusinessSchema(
   service: Service,
   neighborhood: Neighborhood
 ) {
+  const location = neighborhood.name === neighborhood.region ? neighborhood.name : `${neighborhood.name}, ${neighborhood.region}`;
   return {
     "@context": "https://schema.org",
-    "@type": "LocalBusiness",
-    name: `${service.name} in ${neighborhood.name} - ${SITE_NAME}`,
-    description: `${service.description} Serving ${neighborhood.name}, ${neighborhood.region}.`,
+    "@type": "ProfessionalService",
+    name: `${SITE_NAME} — SEO for ${service.name} Businesses`,
+    description: `Local SEO and AI search optimization for ${service.name.toLowerCase()} businesses in ${location}.`,
     url: `${SITE_URL}/${service.slug}/${neighborhood.slug}`,
     telephone: PHONE,
+    provider: {
+      "@type": "Organization",
+      name: SITE_NAME,
+      url: SITE_URL,
+    },
     areaServed: {
       "@type": "Place",
-      name: `${neighborhood.name}, ${neighborhood.region}`,
+      name: location,
     },
-    serviceType: service.name,
+    serviceType: `SEO for ${service.name} Businesses`,
   };
 }
 
@@ -60,6 +81,32 @@ export function getServiceSchema(service: Service) {
       "@type": "City",
       name: "New York",
     },
+    hasOfferCatalog: {
+      "@type": "OfferCatalog",
+      name: `${service.name} Services`,
+      itemListElement: service.commonServices.map((cs) => ({
+        "@type": "Offer",
+        itemOffered: {
+          "@type": "Service",
+          name: cs,
+        },
+      })),
+    },
+  };
+}
+
+export function getFAQPageSchema(faqs: { q: string; a: string }[]) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: faqs.map((faq) => ({
+      "@type": "Question",
+      name: faq.q,
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: faq.a,
+      },
+    })),
   };
 }
 
@@ -108,6 +155,32 @@ export function getOrganizationSchema() {
       name: "Consortium NYC",
       url: "https://www.consortiumnyc.com",
     },
+  };
+}
+
+export function serviceToIndustrySlug(service: Service): string {
+  return `${service.slug}-business-seo`;
+}
+
+export function getIndustryHubMeta(service: Service) {
+  const title = `SEO for ${service.name} Businesses | ${service.name} SEO NYC`;
+  const description = `SEO and AI search optimization built for ${service.name.toLowerCase()} businesses. Local SEO, Google Maps, programmatic pages, and AI search visibility across 318 NYC metro neighborhoods.`;
+
+  return {
+    title,
+    description,
+    canonical: `${SITE_URL}/industries/${serviceToIndustrySlug(service)}`,
+  };
+}
+
+export function getIndustryRegionMeta(service: Service, region: string) {
+  const title = `SEO for ${service.name} Businesses in ${region} | Local SEO`;
+  const description = `Local SEO and AI search optimization for ${service.name.toLowerCase()} businesses in ${region}. Google Maps ranking, programmatic location pages, and AI search visibility for every neighborhood.`;
+
+  return {
+    title,
+    description,
+    canonical: `${SITE_URL}/industries/${serviceToIndustrySlug(service)}/${region.toLowerCase().replace(/\s+/g, "-")}`,
   };
 }
 

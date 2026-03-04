@@ -12,16 +12,22 @@ const inter = Inter({
 
 export const metadata: Metadata = {
   title: {
-    default: "The NYC SEO | Find Top-Rated Local Services in NYC",
+    default: "The NYC SEO | NYC SEO Agency for Local Businesses",
     template: "%s | The NYC SEO",
   },
   description:
-    "Find the best local service providers across New York City, New Jersey, Long Island & Westchester. Compare top-rated plumbers, electricians, lawyers, dentists & more.",
+    "Full-service SEO agency in New York City. Local SEO, Google Maps, AI search optimization, and programmatic pages for service businesses across NYC, NJ, Long Island & Westchester.",
   metadataBase: new URL(SITE_URL),
   openGraph: {
     type: "website",
     locale: "en_US",
     siteName: "The NYC SEO",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "The NYC SEO | NYC SEO Agency",
+    description:
+      "Full-service SEO agency in New York City. On-page, off-page, technical, local, and AI search optimization for service businesses. 25+ years experience.",
   },
   robots: {
     index: true,

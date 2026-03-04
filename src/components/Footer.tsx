@@ -15,8 +15,8 @@ export default function Footer() {
               The<span className="text-blue-400">NYC</span>SEO
             </span>
             <p className="mt-3 text-sm leading-6">
-              Your source for finding the best local service providers across New
-              York City, New Jersey, Long Island & Westchester.
+              Full-service SEO agency helping local businesses rank on Google
+              Maps, organic search, and AI platforms across NYC metro.
             </p>
             <a
               href={`tel:${PHONE.replace(/-/g, "")}`}
