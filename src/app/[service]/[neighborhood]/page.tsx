@@ -28,9 +28,14 @@ interface PageProps {
   params: Promise<{ service: string; neighborhood: string }>;
 }
 
+// Don't pre-render all 54K pages at build time — use ISR instead
+export const dynamicParams = true;
+export const revalidate = 86400; // revalidate every 24h
+
 export async function generateStaticParams() {
-  const services = getAllServices();
-  const neighborhoods = getAllNeighborhoods();
+  // Pre-render a small seed set; the rest render on first visit and cache
+  const services = getAllServices().slice(0, 5);
+  const neighborhoods = getAllNeighborhoods().slice(0, 10);
 
   return services.flatMap((s) =>
     neighborhoods.map((n) => ({
