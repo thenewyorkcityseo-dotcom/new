@@ -8,7 +8,9 @@ import {
 } from "@/lib/data";
 import { SITE_URL, serviceToIndustrySlug } from "@/lib/seo";
 
-export default function sitemap(): MetadataRoute.Sitemap {
+const URLS_PER_SITEMAP = 45000;
+
+function getAllUrls(): MetadataRoute.Sitemap {
   const services = getAllServices();
   const neighborhoods = getAllNeighborhoods();
   const categories = getCategories();
@@ -65,7 +67,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
   ];
 
-  // Service hub pages: /[service]
   const servicePages: MetadataRoute.Sitemap = services.map((s) => ({
     url: `${SITE_URL}/${s.slug}`,
     lastModified: new Date(),
@@ -73,7 +74,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.8,
   }));
 
-  // Business category pages: /businesses/[category]
   const businessPages: MetadataRoute.Sitemap = categories.map((c) => ({
     url: `${SITE_URL}/businesses/${categoryToSlug(c)}`,
     lastModified: new Date(),
@@ -81,7 +81,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.8,
   }));
 
-  // Neighborhood hub pages: /areas/[neighborhood]
   const neighborhoodPages: MetadataRoute.Sitemap = neighborhoods.map((n) => ({
     url: `${SITE_URL}/areas/${n.slug}`,
     lastModified: new Date(),
@@ -89,7 +88,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.8,
   }));
 
-  // Industry hub pages: /industries/[slug]
   const industryPages: MetadataRoute.Sitemap = services.map((s) => ({
     url: `${SITE_URL}/industries/${serviceToIndustrySlug(s)}`,
     lastModified: new Date(),
@@ -97,7 +95,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.8,
   }));
 
-  // Industry region pages: /industries/[slug]/[region]
   const industryRegionPages: MetadataRoute.Sitemap = services.flatMap((s) =>
     regions.map((r) => ({
       url: `${SITE_URL}/industries/${serviceToIndustrySlug(s)}/${r.toLowerCase().replace(/\s+/g, "-")}`,
@@ -107,7 +104,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     }))
   );
 
-  // Money pages: /[service]/[neighborhood]
   const moneyPages: MetadataRoute.Sitemap = services.flatMap((s) =>
     neighborhoods.map((n) => ({
       url: `${SITE_URL}/${s.slug}/${n.slug}`,
@@ -126,4 +122,16 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ...industryRegionPages,
     ...moneyPages,
   ];
+}
+
+export async function generateSitemaps() {
+  const totalUrls = getAllUrls().length;
+  const count = Math.ceil(totalUrls / URLS_PER_SITEMAP);
+  return Array.from({ length: count }, (_, i) => ({ id: i }));
+}
+
+export default function sitemap({ id }: { id: number }): MetadataRoute.Sitemap {
+  const allUrls = getAllUrls();
+  const start = id * URLS_PER_SITEMAP;
+  return allUrls.slice(start, start + URLS_PER_SITEMAP);
 }
