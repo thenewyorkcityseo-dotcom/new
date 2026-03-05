@@ -10,13 +10,13 @@ import { SITE_URL, serviceToIndustrySlug } from "@/lib/seo";
 
 const URLS_PER_SITEMAP = 45000;
 
-function getAllUrls(): MetadataRoute.Sitemap {
+function getStaticAndHubUrls(): MetadataRoute.Sitemap {
   const services = getAllServices();
   const neighborhoods = getAllNeighborhoods();
   const categories = getCategories();
   const regions = getRegions();
 
-  const staticPages: MetadataRoute.Sitemap = [
+  return [
     {
       url: SITE_URL,
       lastModified: new Date(),
@@ -65,46 +65,46 @@ function getAllUrls(): MetadataRoute.Sitemap {
       changeFrequency: "monthly",
       priority: 0.7,
     },
-  ];
-
-  const servicePages: MetadataRoute.Sitemap = services.map((s) => ({
-    url: `${SITE_URL}/${s.slug}`,
-    lastModified: new Date(),
-    changeFrequency: "weekly" as const,
-    priority: 0.8,
-  }));
-
-  const businessPages: MetadataRoute.Sitemap = categories.map((c) => ({
-    url: `${SITE_URL}/businesses/${categoryToSlug(c)}`,
-    lastModified: new Date(),
-    changeFrequency: "weekly" as const,
-    priority: 0.8,
-  }));
-
-  const neighborhoodPages: MetadataRoute.Sitemap = neighborhoods.map((n) => ({
-    url: `${SITE_URL}/areas/${n.slug}`,
-    lastModified: new Date(),
-    changeFrequency: "weekly" as const,
-    priority: 0.8,
-  }));
-
-  const industryPages: MetadataRoute.Sitemap = services.map((s) => ({
-    url: `${SITE_URL}/industries/${serviceToIndustrySlug(s)}`,
-    lastModified: new Date(),
-    changeFrequency: "weekly" as const,
-    priority: 0.8,
-  }));
-
-  const industryRegionPages: MetadataRoute.Sitemap = services.flatMap((s) =>
-    regions.map((r) => ({
-      url: `${SITE_URL}/industries/${serviceToIndustrySlug(s)}/${r.toLowerCase().replace(/\s+/g, "-")}`,
+    ...services.map((s) => ({
+      url: `${SITE_URL}/${s.slug}`,
       lastModified: new Date(),
-      changeFrequency: "monthly" as const,
-      priority: 0.7,
-    }))
-  );
+      changeFrequency: "weekly" as const,
+      priority: 0.8,
+    })),
+    ...categories.map((c) => ({
+      url: `${SITE_URL}/businesses/${categoryToSlug(c)}`,
+      lastModified: new Date(),
+      changeFrequency: "weekly" as const,
+      priority: 0.8,
+    })),
+    ...neighborhoods.map((n) => ({
+      url: `${SITE_URL}/areas/${n.slug}`,
+      lastModified: new Date(),
+      changeFrequency: "weekly" as const,
+      priority: 0.8,
+    })),
+    ...services.map((s) => ({
+      url: `${SITE_URL}/industries/${serviceToIndustrySlug(s)}`,
+      lastModified: new Date(),
+      changeFrequency: "weekly" as const,
+      priority: 0.8,
+    })),
+    ...services.flatMap((s) =>
+      regions.map((r) => ({
+        url: `${SITE_URL}/industries/${serviceToIndustrySlug(s)}/${r.toLowerCase().replace(/\s+/g, "-")}`,
+        lastModified: new Date(),
+        changeFrequency: "monthly" as const,
+        priority: 0.7,
+      }))
+    ),
+  ];
+}
 
-  const moneyPages: MetadataRoute.Sitemap = services.flatMap((s) =>
+function getMoneyPageUrls(): MetadataRoute.Sitemap {
+  const services = getAllServices();
+  const neighborhoods = getAllNeighborhoods();
+
+  return services.flatMap((s) =>
     neighborhoods.map((n) => ({
       url: `${SITE_URL}/${s.slug}/${n.slug}`,
       lastModified: new Date(),
@@ -112,26 +112,21 @@ function getAllUrls(): MetadataRoute.Sitemap {
       priority: 0.7,
     }))
   );
-
-  return [
-    ...staticPages,
-    ...servicePages,
-    ...businessPages,
-    ...neighborhoodPages,
-    ...industryPages,
-    ...industryRegionPages,
-    ...moneyPages,
-  ];
 }
 
 export async function generateSitemaps() {
-  const totalUrls = getAllUrls().length;
-  const count = Math.ceil(totalUrls / URLS_PER_SITEMAP);
+  const hubCount = getStaticAndHubUrls().length;
+  const moneyCount = getMoneyPageUrls().length;
+  const total = hubCount + moneyCount;
+  const count = Math.ceil(total / URLS_PER_SITEMAP);
   return Array.from({ length: count }, (_, i) => ({ id: i }));
 }
 
-export default function sitemap({ id }: { id: number }): MetadataRoute.Sitemap {
-  const allUrls = getAllUrls();
+export default async function sitemap(props: { id: Promise<number> | number }): Promise<MetadataRoute.Sitemap> {
+  const id = Number(await props.id);
+  const hubUrls = getStaticAndHubUrls();
+  const moneyUrls = getMoneyPageUrls();
+  const allUrls = [...hubUrls, ...moneyUrls];
   const start = id * URLS_PER_SITEMAP;
   return allUrls.slice(start, start + URLS_PER_SITEMAP);
 }
