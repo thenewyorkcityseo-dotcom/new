@@ -26,13 +26,10 @@ interface PageProps {
   params: Promise<{ slug: string }>;
 }
 
-// Don't pre-render all 172 pages at build time — use ISR instead
-export const dynamicParams = true;
-export const revalidate = 86400; // revalidate every 24h
+export const dynamicParams = false;
 
 export async function generateStaticParams() {
-  // Seed top industries; the rest render on first visit and cache
-  return getAllServices().slice(0, 10).map((s) => ({ slug: serviceToIndustrySlug(s) }));
+  return getAllServices().map((s) => ({ slug: serviceToIndustrySlug(s) }));
 }
 
 function getServiceFromIndustrySlug(slug: string) {

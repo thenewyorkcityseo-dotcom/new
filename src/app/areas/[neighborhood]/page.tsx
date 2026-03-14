@@ -27,13 +27,10 @@ interface PageProps {
   params: Promise<{ neighborhood: string }>;
 }
 
-// Don't pre-render all 318 pages at build time — use ISR instead
-export const dynamicParams = true;
-export const revalidate = 86400; // revalidate every 24h
+export const dynamicParams = false;
 
 export async function generateStaticParams() {
-  // Seed top neighborhoods; the rest render on first visit and cache
-  return getAllNeighborhoods().slice(0, 20).map((n) => ({ neighborhood: n.slug }));
+  return getAllNeighborhoods().map((n) => ({ neighborhood: n.slug }));
 }
 
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {

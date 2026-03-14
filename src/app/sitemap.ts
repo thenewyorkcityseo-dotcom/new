@@ -8,125 +8,122 @@ import {
 } from "@/lib/data";
 import { SITE_URL, serviceToIndustrySlug } from "@/lib/seo";
 
-const URLS_PER_SITEMAP = 45000;
+const MAX_URLS = 49999;
+const LAST_MODIFIED = new Date("2025-03-01");
 
-function getStaticAndHubUrls(): MetadataRoute.Sitemap {
+export default function sitemap(): MetadataRoute.Sitemap {
   const services = getAllServices();
   const neighborhoods = getAllNeighborhoods();
   const categories = getCategories();
   const regions = getRegions();
 
-  return [
+  const staticPages: MetadataRoute.Sitemap = [
     {
       url: SITE_URL,
-      lastModified: new Date(),
+      lastModified: LAST_MODIFIED,
       changeFrequency: "weekly",
       priority: 1,
     },
     {
       url: `${SITE_URL}/services`,
-      lastModified: new Date(),
+      lastModified: LAST_MODIFIED,
       changeFrequency: "weekly",
       priority: 0.9,
     },
     {
       url: `${SITE_URL}/areas`,
-      lastModified: new Date(),
+      lastModified: LAST_MODIFIED,
       changeFrequency: "weekly",
       priority: 0.9,
     },
     {
       url: `${SITE_URL}/businesses`,
-      lastModified: new Date(),
+      lastModified: LAST_MODIFIED,
       changeFrequency: "weekly",
       priority: 0.9,
     },
     {
       url: `${SITE_URL}/industries`,
-      lastModified: new Date(),
+      lastModified: LAST_MODIFIED,
       changeFrequency: "weekly",
       priority: 0.9,
     },
     {
       url: `${SITE_URL}/about`,
-      lastModified: new Date(),
+      lastModified: LAST_MODIFIED,
       changeFrequency: "monthly",
       priority: 0.5,
     },
     {
       url: `${SITE_URL}/contact`,
-      lastModified: new Date(),
+      lastModified: LAST_MODIFIED,
       changeFrequency: "monthly",
       priority: 0.5,
     },
     {
       url: `${SITE_URL}/pricing`,
-      lastModified: new Date(),
+      lastModified: LAST_MODIFIED,
       changeFrequency: "monthly",
       priority: 0.7,
     },
-    ...services.map((s) => ({
-      url: `${SITE_URL}/${s.slug}`,
-      lastModified: new Date(),
-      changeFrequency: "weekly" as const,
-      priority: 0.8,
-    })),
-    ...categories.map((c) => ({
-      url: `${SITE_URL}/businesses/${categoryToSlug(c)}`,
-      lastModified: new Date(),
-      changeFrequency: "weekly" as const,
-      priority: 0.8,
-    })),
-    ...neighborhoods.map((n) => ({
-      url: `${SITE_URL}/areas/${n.slug}`,
-      lastModified: new Date(),
-      changeFrequency: "weekly" as const,
-      priority: 0.8,
-    })),
-    ...services.map((s) => ({
-      url: `${SITE_URL}/industries/${serviceToIndustrySlug(s)}`,
-      lastModified: new Date(),
-      changeFrequency: "weekly" as const,
-      priority: 0.8,
-    })),
-    ...services.flatMap((s) =>
-      regions.map((r) => ({
-        url: `${SITE_URL}/industries/${serviceToIndustrySlug(s)}/${r.toLowerCase().replace(/\s+/g, "-")}`,
-        lastModified: new Date(),
-        changeFrequency: "monthly" as const,
-        priority: 0.7,
-      }))
-    ),
   ];
-}
 
-function getMoneyPageUrls(): MetadataRoute.Sitemap {
-  const services = getAllServices();
-  const neighborhoods = getAllNeighborhoods();
+  const servicePages: MetadataRoute.Sitemap = services.map((s) => ({
+    url: `${SITE_URL}/${s.slug}`,
+    lastModified: LAST_MODIFIED,
+    changeFrequency: "weekly" as const,
+    priority: 0.8,
+  }));
 
-  return services.flatMap((s) =>
-    neighborhoods.map((n) => ({
-      url: `${SITE_URL}/${s.slug}/${n.slug}`,
-      lastModified: new Date(),
+  const businessPages: MetadataRoute.Sitemap = categories.map((c) => ({
+    url: `${SITE_URL}/businesses/${categoryToSlug(c)}`,
+    lastModified: LAST_MODIFIED,
+    changeFrequency: "weekly" as const,
+    priority: 0.8,
+  }));
+
+  const neighborhoodPages: MetadataRoute.Sitemap = neighborhoods.map((n) => ({
+    url: `${SITE_URL}/areas/${n.slug}`,
+    lastModified: LAST_MODIFIED,
+    changeFrequency: "weekly" as const,
+    priority: 0.8,
+  }));
+
+  const industryPages: MetadataRoute.Sitemap = services.map((s) => ({
+    url: `${SITE_URL}/industries/${serviceToIndustrySlug(s)}`,
+    lastModified: LAST_MODIFIED,
+    changeFrequency: "weekly" as const,
+    priority: 0.8,
+  }));
+
+  const industryRegionPages: MetadataRoute.Sitemap = services.flatMap((s) =>
+    regions.map((r) => ({
+      url: `${SITE_URL}/industries/${serviceToIndustrySlug(s)}/${r.toLowerCase().replace(/\s+/g, "-")}`,
+      lastModified: LAST_MODIFIED,
       changeFrequency: "monthly" as const,
       priority: 0.7,
     }))
   );
-}
 
-export async function generateSitemaps() {
-  const hubCount = getStaticAndHubUrls().length;
-  const moneyCount = getMoneyPageUrls().length;
-  const total = hubCount + moneyCount;
-  const count = Math.ceil(total / URLS_PER_SITEMAP);
-  return Array.from({ length: count }, (_, i) => ({ id: i }));
-}
+  const highPriorityUrls = [
+    ...staticPages,
+    ...servicePages,
+    ...businessPages,
+    ...neighborhoodPages,
+    ...industryPages,
+    ...industryRegionPages,
+  ];
 
-export default async function sitemap(props: { id: Promise<number> | number }): Promise<MetadataRoute.Sitemap> {
-  const id = Number(await props.id);
-  const hubUrls = getStaticAndHubUrls();
-  const moneyUrls = getMoneyPageUrls();
-  const allUrls = [...hubUrls, ...moneyUrls];
-  const start = id * URLS_PER_SITEMAP;
-  return allUrls.slice(start, start + URLS_PER_SITEMAP);
+  const moneyPageBudget = MAX_URLS - highPriorityUrls.length;
+
+  const moneyPages: MetadataRoute.Sitemap = services.flatMap((s) =>
+    neighborhoods.map((n) => ({
+      url: `${SITE_URL}/${s.slug}/${n.slug}`,
+      lastModified: LAST_MODIFIED,
+      changeFrequency: "monthly" as const,
+      priority: 0.7,
+    }))
+  ).slice(0, moneyPageBudget);
+
+  return [...highPriorityUrls, ...moneyPages];
 }
