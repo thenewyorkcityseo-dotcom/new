@@ -1,7 +1,10 @@
 import { NextRequest, NextResponse } from "next/server";
 import { Resend } from "resend";
+import { getSupabase } from "@/lib/supabase";
 
-const resend = new Resend(process.env.RESEND_API_KEY);
+function getResend() {
+  return new Resend(process.env.RESEND_API_KEY);
+}
 
 const NOTIFY_EMAIL = process.env.NOTIFY_EMAIL || "jeff@consortiumnyc.com";
 const FROM_EMAIL = process.env.FROM_EMAIL || "leads@thenycseo.com";
@@ -18,9 +21,36 @@ export async function POST(req: NextRequest) {
       );
     }
 
+    // Save lead to Supabase
+    const leadData: Record<string, unknown> = {
+      name,
+      email,
+      phone: phone || null,
+      message,
+      form_type: formType === "general-inquiry" ? "general-inquiry" : "partnership-request",
+    };
+
+    if (formType === "general-inquiry") {
+      leadData.subject = body.subject || null;
+    } else {
+      leadData.business_name = body.businessName || null;
+      leadData.service = body.service || null;
+      leadData.location = body.location || null;
+      leadData.website = body.website || null;
+      leadData.monthly_budget = body.monthlyBudget || null;
+      leadData.current_marketing = body.currentMarketing || null;
+      leadData.timeline = body.timeline || null;
+      leadData.additional_services = body.additionalServices || [];
+    }
+
+    const { error: dbError } = await getSupabase().from("leads").insert(leadData);
+    if (dbError) {
+      console.error("Supabase insert error:", dbError);
+    }
+
     if (formType === "general-inquiry") {
       const { subject } = body;
-      await resend.emails.send({
+      await getResend().emails.send({
         from: `The NYC SEO <${FROM_EMAIL}>`,
         to: NOTIFY_EMAIL,
         subject: `General Inquiry: ${subject || "No subject"} - ${name}`,
@@ -42,7 +72,7 @@ export async function POST(req: NextRequest) {
       });
     } else {
       const { businessName, service, location, website, monthlyBudget, currentMarketing, timeline, additionalServices } = body;
-      await resend.emails.send({
+      await getResend().emails.send({
         from: `The NYC SEO <${FROM_EMAIL}>`,
         to: NOTIFY_EMAIL,
         subject: `Partnership Request: ${businessName || name} - ${service || "General"} ${location ? `in ${location}` : ""}`,
