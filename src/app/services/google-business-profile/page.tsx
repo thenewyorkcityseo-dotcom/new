@@ -564,7 +564,7 @@ export default function GBPPage() {
               <h3 className="text-xl font-semibold text-[#EFF70A]">GBP Optimization vs. Google Ads (PPC)</h3>
               <p className="mt-3 text-zinc-300 leading-relaxed">
                 Google Ads puts you at the top of the page immediately, but you pay $15 to $85 per click for service keywords in NYC — and the moment you stop paying, you disappear. A fully optimized GBP gets you into the local 3-pack, which appears above organic results and often receives more clicks than ads because consumers trust map pack results more. GBP clicks are free. Once you rank in the map pack, every call, every direction request, and every website click costs you nothing. Over a 12-month period, GBP optimization delivers 8x to 15x better ROI than PPC for local service businesses. The smartest approach is to run{" "}
-                <Link href="/services/google-ads" className="text-[#5CB8FF] hover:text-[#8DD0FF]">Google Ads</Link>{" "}
+                <Link href="/services/search-engine-optimization" className="text-[#5CB8FF] hover:text-[#8DD0FF]">Google Ads alongside SEO</Link>{" "}
                 for immediate visibility while your GBP builds momentum, then scale ads down as your map pack rankings solidify.
               </p>
             </div>

@@ -8,10 +8,10 @@ import {
 } from "@/lib/data";
 import { SITE_URL, serviceToIndustrySlug } from "@/lib/seo";
 
-const MAX_URLS = 49999;
-const LAST_MODIFIED = new Date("2025-03-01");
+const URLS_PER_SITEMAP = 19000;
+const LAST_MODIFIED = new Date("2026-03-28");
 
-export default function sitemap(): MetadataRoute.Sitemap {
+function buildAllUrls(): MetadataRoute.Sitemap {
   const services = getAllServices();
   const neighborhoods = getAllNeighborhoods();
   const categories = getCategories();
@@ -105,17 +105,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     }))
   );
 
-  const highPriorityUrls = [
-    ...staticPages,
-    ...servicePages,
-    ...businessPages,
-    ...neighborhoodPages,
-    ...industryPages,
-    ...industryRegionPages,
-  ];
-
-  const moneyPageBudget = MAX_URLS - highPriorityUrls.length;
-
   const moneyPages: MetadataRoute.Sitemap = services.flatMap((s) =>
     neighborhoods.map((n) => ({
       url: `${SITE_URL}/${s.slug}/${n.slug}`,
@@ -123,7 +112,27 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "monthly" as const,
       priority: 0.7,
     }))
-  ).slice(0, moneyPageBudget);
+  );
 
-  return [...highPriorityUrls, ...moneyPages];
+  return [
+    ...staticPages,
+    ...servicePages,
+    ...businessPages,
+    ...neighborhoodPages,
+    ...industryPages,
+    ...industryRegionPages,
+    ...moneyPages,
+  ];
+}
+
+export async function generateSitemaps() {
+  const allUrls = buildAllUrls();
+  const count = Math.ceil(allUrls.length / URLS_PER_SITEMAP);
+  return Array.from({ length: count }, (_, i) => ({ id: i }));
+}
+
+export default function sitemap({ id }: { id: number }): MetadataRoute.Sitemap {
+  const allUrls = buildAllUrls();
+  const start = id * URLS_PER_SITEMAP;
+  return allUrls.slice(start, start + URLS_PER_SITEMAP);
 }
