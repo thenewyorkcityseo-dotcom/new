@@ -128,7 +128,7 @@ function buildAllUrls(): MetadataRoute.Sitemap {
 export async function generateSitemaps() {
   const allUrls = buildAllUrls();
   const count = Math.ceil(allUrls.length / URLS_PER_SITEMAP);
-  return Array.from({ length: count }, (_, i) => ({ id: i + 1 }));
+  return Array.from({ length: count }, (_, i) => ({ id: i + 6 }));
 }
 
 export default async function sitemap({
@@ -138,6 +138,6 @@ export default async function sitemap({
 }): Promise<MetadataRoute.Sitemap> {
   const resolvedId = Number(await id);
   const allUrls = buildAllUrls();
-  const start = (resolvedId - 1) * URLS_PER_SITEMAP;
+  const start = (resolvedId - 6) * URLS_PER_SITEMAP;
   return allUrls.slice(start, start + URLS_PER_SITEMAP);
 }
