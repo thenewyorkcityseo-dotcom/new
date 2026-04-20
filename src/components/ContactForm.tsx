@@ -146,8 +146,8 @@ export default function ContactForm({
           <input type="text" id="name" name="name" required className={inputClass} placeholder="Full name" />
         </div>
         <div>
-          <label htmlFor="businessName" className={labelClass}>Business Name *</label>
-          <input type="text" id="businessName" name="businessName" required className={inputClass} placeholder="Your business name" />
+          <label htmlFor="phone" className={labelClass}>Phone *</label>
+          <input type="tel" id="phone" name="phone" required className={inputClass} placeholder="(555) 555-5555" />
         </div>
       </div>
 
@@ -157,97 +157,21 @@ export default function ContactForm({
           <input type="email" id="email" name="email" required className={inputClass} placeholder="you@email.com" />
         </div>
         <div>
-          <label htmlFor="phone" className={labelClass}>Phone *</label>
-          <input type="tel" id="phone" name="phone" required className={inputClass} placeholder="(555) 555-5555" />
+          <label htmlFor="businessName" className={labelClass}>Business Name *</label>
+          <input type="text" id="businessName" name="businessName" required className={inputClass} placeholder="Your business name" />
         </div>
       </div>
 
-      <div className="grid gap-4 md:grid-cols-2">
-        <div>
-          <label htmlFor="service" className={labelClass}>What type of business? *</label>
-          <input type="text" id="service" name="service" required defaultValue={service || ""} className={inputClass} placeholder="e.g. Plumbing, Law Firm, Dental" />
-        </div>
-        <div>
-          <label htmlFor="location" className={labelClass}>Primary service area *</label>
-          <input type="text" id="location" name="location" required defaultValue={neighborhood || ""} className={inputClass} placeholder="e.g. Brooklyn, Jersey City" />
-        </div>
-      </div>
+      <input type="hidden" name="service" value={service || ""} />
+      <input type="hidden" name="location" value={neighborhood || ""} />
+      <input type="hidden" name="website" value="" />
+      <input type="hidden" name="monthlyBudget" value="" />
+      <input type="hidden" name="currentMarketing" value="" />
+      <input type="hidden" name="timeline" value="" />
 
       <div>
-        <label htmlFor="website" className={labelClass}>Current website (if any)</label>
-        <input type="url" id="website" name="website" className={inputClass} placeholder="https://yourbusiness.com" />
-      </div>
-
-      <div className="grid gap-4 md:grid-cols-2">
-        <div>
-          <label htmlFor="monthlyBudget" className={labelClass}>Monthly marketing budget *</label>
-          <select id="monthlyBudget" name="monthlyBudget" required className={selectClass}>
-            <option value="">Select range</option>
-            <option value="under-1000">Under $1,000</option>
-            <option value="1000-2500">$1,000 - $2,500</option>
-            <option value="2500-5000">$2,500 - $5,000</option>
-            <option value="5000-10000">$5,000 - $10,000</option>
-            <option value="10000+">$10,000+</option>
-          </select>
-        </div>
-        <div>
-          <label htmlFor="currentMarketing" className={labelClass}>How do you get customers now? *</label>
-          <select id="currentMarketing" name="currentMarketing" required className={selectClass}>
-            <option value="">Select one</option>
-            <option value="google-ads">Google Ads</option>
-            <option value="social-ads">Social Media Ads</option>
-            <option value="word-of-mouth">Word of Mouth / Referrals</option>
-            <option value="seo">Already doing SEO</option>
-            <option value="directories">Yelp / Thumbtack / Directories</option>
-            <option value="nothing">Not much right now</option>
-            <option value="mix">Mix of everything</option>
-          </select>
-        </div>
-      </div>
-
-      <div>
-        <label htmlFor="timeline" className={labelClass}>How soon are you looking to start? *</label>
-        <select id="timeline" name="timeline" required className={selectClass}>
-          <option value="">Select one</option>
-          <option value="asap">Immediately</option>
-          <option value="1-month">Within a month</option>
-          <option value="2-3-months">2-3 months</option>
-          <option value="just-exploring">Just exploring options</option>
-        </select>
-      </div>
-
-      <div>
-        <label className={labelClass}>What else can we help with?</label>
-        <p className={`mt-1 text-xs ${dark ? "text-zinc-500" : "text-zinc-500"}`}>Select any additional services your business might need.</p>
-        <div className="mt-2 grid grid-cols-2 gap-2">
-          {[
-            "Branding & Identity",
-            "Web Design & Development",
-            "Business Development",
-            "Consulting & Strategy",
-            "Marketing Manager",
-            "Automation & AI",
-            "Social Media",
-            "Content Creation",
-          ].map((svc) => (
-            <label
-              key={svc}
-              className={`flex items-center gap-2 rounded-lg border px-3 py-2.5 text-sm cursor-pointer ${
-                dark
-                  ? "border-zinc-700 text-zinc-300 hover:border-[#0080FE] hover:bg-zinc-800 has-[:checked]:border-[#0080FE] has-[:checked]:bg-zinc-800"
-                  : "border-zinc-200 text-zinc-700 hover:border-blue-300 hover:bg-blue-50 has-[:checked]:border-[#0080FE] has-[:checked]:bg-blue-50"
-              }`}
-            >
-              <input type="checkbox" name="additionalServices" value={svc} className="h-4 w-4 rounded border-zinc-300 text-[#0080FE] focus:ring-[#0080FE]" />
-              {svc}
-            </label>
-          ))}
-        </div>
-      </div>
-
-      <div>
-        <label htmlFor="message" className={labelClass}>Tell us about your business and goals *</label>
-        <textarea id="message" name="message" required rows={4} className={inputClass} placeholder="What does your business do? What are you struggling with? What does success look like for you?" />
+        <label htmlFor="message" className={labelClass}>What do you need help with? *</label>
+        <textarea id="message" name="message" required rows={4} className={inputClass} placeholder="Tell us about your business and what you're looking for." />
       </div>
 
       <button
@@ -257,11 +181,6 @@ export default function ContactForm({
       >
         {status === "sending" ? "Submitting..." : "Request a Partnership"}
       </button>
-
-      <p className={`text-center text-xs ${dark ? "text-zinc-500" : "text-zinc-500"}`}>
-        The best partnerships start with an honest conversation. Tell us
-        about your business and we&apos;ll tell you exactly how we can help.
-      </p>
 
       {status === "error" && (
         <p className={`text-center text-sm ${dark ? "text-red-400" : "text-red-600"}`}>
