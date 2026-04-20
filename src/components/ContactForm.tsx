@@ -151,17 +151,12 @@ export default function ContactForm({
         </div>
       </div>
 
-      <div className="grid gap-4 md:grid-cols-2">
-        <div>
-          <label htmlFor="email" className={labelClass}>Email *</label>
-          <input type="email" id="email" name="email" required className={inputClass} placeholder="you@email.com" />
-        </div>
-        <div>
-          <label htmlFor="businessName" className={labelClass}>Business Name *</label>
-          <input type="text" id="businessName" name="businessName" required className={inputClass} placeholder="Your business name" />
-        </div>
+      <div>
+        <label htmlFor="email" className={labelClass}>Email *</label>
+        <input type="email" id="email" name="email" required className={inputClass} placeholder="you@email.com" />
       </div>
 
+      <input type="hidden" name="businessName" value="" />
       <input type="hidden" name="service" value={service || ""} />
       <input type="hidden" name="location" value={neighborhood || ""} />
       <input type="hidden" name="website" value="" />

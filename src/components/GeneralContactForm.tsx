@@ -16,7 +16,7 @@ export default function GeneralContactForm() {
       name: (form.elements.namedItem("name") as HTMLInputElement).value,
       email: (form.elements.namedItem("email") as HTMLInputElement).value,
       phone: (form.elements.namedItem("phone") as HTMLInputElement).value,
-      subject: (form.elements.namedItem("subject") as HTMLInputElement).value,
+      subject: "General Inquiry",
       message: (form.elements.namedItem("message") as HTMLTextAreaElement).value,
       formType: "general-inquiry",
     };
@@ -71,25 +71,19 @@ export default function GeneralContactForm() {
           <input type="text" id="name" name="name" required className={inputClass} placeholder="Your name" />
         </div>
         <div>
-          <label htmlFor="email" className={labelClass}>Email *</label>
-          <input type="email" id="email" name="email" required className={inputClass} placeholder="you@email.com" />
-        </div>
-      </div>
-
-      <div className="grid gap-4 md:grid-cols-2">
-        <div>
-          <label htmlFor="phone" className={labelClass}>Phone</label>
-          <input type="tel" id="phone" name="phone" className={inputClass} placeholder="(555) 555-5555" />
-        </div>
-        <div>
-          <label htmlFor="subject" className={labelClass}>Subject *</label>
-          <input type="text" id="subject" name="subject" required className={inputClass} placeholder="What's this about?" />
+          <label htmlFor="phone" className={labelClass}>Phone *</label>
+          <input type="tel" id="phone" name="phone" required className={inputClass} placeholder="(555) 555-5555" />
         </div>
       </div>
 
       <div>
+        <label htmlFor="email" className={labelClass}>Email *</label>
+        <input type="email" id="email" name="email" required className={inputClass} placeholder="you@email.com" />
+      </div>
+
+      <div>
         <label htmlFor="message" className={labelClass}>Message *</label>
-        <textarea id="message" name="message" required rows={5} className={inputClass} placeholder="How can we help?" />
+        <textarea id="message" name="message" required rows={4} className={inputClass} placeholder="How can we help?" />
       </div>
 
       <button
