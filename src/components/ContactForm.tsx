@@ -9,6 +9,13 @@ interface ContactFormProps {
   dark?: boolean;
 }
 
+function formatPhone(value: string): string {
+  const digits = value.replace(/\D/g, "").slice(0, 10);
+  if (digits.length < 4) return digits;
+  if (digits.length < 7) return `(${digits.slice(0, 3)}) ${digits.slice(3)}`;
+  return `(${digits.slice(0, 3)}) ${digits.slice(3, 6)}-${digits.slice(6)}`;
+}
+
 export default function ContactForm({
   service,
   neighborhood,
@@ -18,6 +25,7 @@ export default function ContactForm({
   const [status, setStatus] = useState<"idle" | "sending" | "sent" | "error">(
     "idle"
   );
+  const [phone, setPhone] = useState("");
 
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
@@ -110,7 +118,7 @@ export default function ContactForm({
           </div>
           <div>
             <label htmlFor="phone" className={labelClass}>Phone *</label>
-            <input type="tel" id="phone" name="phone" required className={inputClass} placeholder="(555) 555-5555" />
+            <input type="tel" id="phone" name="phone" required value={phone} onChange={(e) => setPhone(formatPhone(e.target.value))} className={inputClass} placeholder="(555) 555-5555" />
           </div>
         </div>
         <div>
@@ -147,7 +155,7 @@ export default function ContactForm({
         </div>
         <div>
           <label htmlFor="phone" className={labelClass}>Phone *</label>
-          <input type="tel" id="phone" name="phone" required className={inputClass} placeholder="(555) 555-5555" />
+          <input type="tel" id="phone" name="phone" required value={phone} onChange={(e) => setPhone(formatPhone(e.target.value))} className={inputClass} placeholder="(555) 555-5555" />
         </div>
       </div>
 
@@ -160,9 +168,48 @@ export default function ContactForm({
       <input type="hidden" name="service" value={service || ""} />
       <input type="hidden" name="location" value={neighborhood || ""} />
       <input type="hidden" name="website" value="" />
-      <input type="hidden" name="monthlyBudget" value="" />
       <input type="hidden" name="currentMarketing" value="" />
       <input type="hidden" name="timeline" value="" />
+
+      <div>
+        <label htmlFor="monthlyBudget" className={labelClass}>Monthly budget *</label>
+        <select id="monthlyBudget" name="monthlyBudget" required defaultValue="" className={selectClass}>
+          <option value="" disabled>Select a range</option>
+          <option value="under-1000">Under $1,000</option>
+          <option value="1000-2500">$1,000 - $2,500</option>
+          <option value="2500-5000">$2,500 - $5,000</option>
+          <option value="5000-10000">$5,000 - $10,000</option>
+          <option value="10000+">$10,000+</option>
+        </select>
+      </div>
+
+      <div>
+        <label className={labelClass}>Services you need *</label>
+        <div className="mt-2 grid grid-cols-2 gap-2">
+          {[
+            "SEO",
+            "Web Design",
+            "Google Ads",
+            "Social Media",
+            "Branding",
+            "Automation & AI",
+            "Content",
+            "Full Marketing Manager",
+          ].map((svc) => (
+            <label
+              key={svc}
+              className={`flex items-center gap-2 rounded-lg border px-3 py-2.5 text-sm cursor-pointer ${
+                dark
+                  ? "border-zinc-700 text-zinc-300 hover:border-[#0080FE] hover:bg-zinc-800 has-[:checked]:border-[#0080FE] has-[:checked]:bg-zinc-800"
+                  : "border-zinc-200 text-zinc-700 hover:border-blue-300 hover:bg-blue-50 has-[:checked]:border-[#0080FE] has-[:checked]:bg-blue-50"
+              }`}
+            >
+              <input type="checkbox" name="additionalServices" value={svc} className="h-4 w-4 rounded border-zinc-300 text-[#0080FE] focus:ring-[#0080FE]" />
+              {svc}
+            </label>
+          ))}
+        </div>
+      </div>
 
       <div>
         <label htmlFor="message" className={labelClass}>What do you need help with? *</label>

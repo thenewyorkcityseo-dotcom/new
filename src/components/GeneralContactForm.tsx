@@ -2,10 +2,18 @@
 
 import { useState } from "react";
 
+function formatPhone(value: string): string {
+  const digits = value.replace(/\D/g, "").slice(0, 10);
+  if (digits.length < 4) return digits;
+  if (digits.length < 7) return `(${digits.slice(0, 3)}) ${digits.slice(3)}`;
+  return `(${digits.slice(0, 3)}) ${digits.slice(3, 6)}-${digits.slice(6)}`;
+}
+
 export default function GeneralContactForm() {
   const [status, setStatus] = useState<"idle" | "sending" | "sent" | "error">(
     "idle"
   );
+  const [phone, setPhone] = useState("");
 
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
@@ -72,7 +80,7 @@ export default function GeneralContactForm() {
         </div>
         <div>
           <label htmlFor="phone" className={labelClass}>Phone *</label>
-          <input type="tel" id="phone" name="phone" required className={inputClass} placeholder="(555) 555-5555" />
+          <input type="tel" id="phone" name="phone" required value={phone} onChange={(e) => setPhone(formatPhone(e.target.value))} className={inputClass} placeholder="(555) 555-5555" />
         </div>
       </div>
 
